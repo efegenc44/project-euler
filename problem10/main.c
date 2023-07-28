@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdint.h>
 
 bool is_prime(size_t n) {
 
@@ -16,13 +17,12 @@ bool is_prime(size_t n) {
 
 int main() {
 
-    size_t i = 2;
-    for (size_t count = 0; count < 10001; ++i) {
+    uint64_t sum = 0;
+    for (size_t i = 0; i < 2000000; ++i) {
         if (is_prime(i))
-            count += 1;
+            sum += i;
     }
 
-    printf("10001st prime number: %d\n", i - 1);
-
+    printf("Sum: %lli\n", sum);
     return 0;
 }
